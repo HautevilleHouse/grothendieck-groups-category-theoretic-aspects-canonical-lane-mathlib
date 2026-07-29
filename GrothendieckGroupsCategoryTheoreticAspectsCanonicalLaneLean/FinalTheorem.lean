@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GrothendieckGroupsCategoryTheoreticAspectsCanonicalLaneLean.GrothendieckGroupConstruction
+import GrothendieckGroupsCategoryTheoreticAspectsCanonicalLaneLean.GrothendieckGroupFunctoriality
+import GrothendieckGroupsCategoryTheoreticAspectsCanonicalLaneLean.GrothendieckGroupOfTriangulated
+
+namespace HautevilleHouse
+namespace GrothendieckGroupsCategoryTheoreticAspectsCanonicalLaneLean
+
+def ConstrainedGrothendieckGroupClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_grothendieck_group_endgame (A : AdmissibleClass) :
+    ConstrainedGrothendieckGroupClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GrothendieckGroupsCategoryTheoreticAspectsCanonicalLaneLean
+end HautevilleHouse
